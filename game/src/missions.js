@@ -51,14 +51,14 @@ function stepsFor(index) {
   switch (index) {
     case 0: return [
       { type: 'steal', x: MISSION_SPOTS.stealCar.x, y: MISSION_SPOTS.stealCar.y, r: 90, text: 'Steal the marked car (walk up and press E)' },
-      { type: 'goto', x: MISSION_SPOTS.garage.x, y: MISSION_SPOTS.garage.y, r: 70, text: 'Drive the car to Marisol\u2019s garage' },
+      { type: 'goto', x: MISSION_SPOTS.garage.x, y: MISSION_SPOTS.garage.y, r: 70, text: 'Drive the car to Marisol’s garage' },
     ];
     case 1: return [
       { type: 'pickup', x: MISSION_SPOTS.package.x, y: MISSION_SPOTS.package.y, r: 60, text: 'Pick up the package on the north road' },
       { type: 'deliver', x: MISSION_SPOTS.pier.x, y: MISSION_SPOTS.pier.y, r: 70, text: 'Deliver the package to the pier — timed!', timer: 60 },
     ];
     case 2: return [
-      { type: 'fight', x: MISSION_SPOTS.corner.x, y: MISSION_SPOTS.corner.y, r: 120, text: 'Clear Rico\u2019s crew off the corner', count: 4 },
+      { type: 'fight', x: MISSION_SPOTS.corner.x, y: MISSION_SPOTS.corner.y, r: 120, text: 'Clear Rico’s crew off the corner', count: 4 },
       { type: 'escape', x: MISSION_SPOTS.escape.x, y: MISSION_SPOTS.escape.y, r: 80, text: 'Escape the heat — reach the east road' },
     ];
     case 3: return [
