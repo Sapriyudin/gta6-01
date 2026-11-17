@@ -113,7 +113,7 @@ function stepOnFoot(state, input, dt) {
   p.y = clamp(res.y, 5, WORLD.height - 15);
   if (p.y > 2320) p.y = 2320;
 
-  if (input.wasPressed('enter')) tryEnterCar(state);
+  if (input.wasPressed('enter')) { tryEnterCar(state); input.consume('enter'); }
   if (input.wasPressed('punch') && p.punchCd <= 0) {
     p.punchCd = PLAYER.punchCooldown;
     if (punch(state, p, true)) state.events.push('punch');
@@ -209,6 +209,7 @@ function stepDriving(state, input, dt) {
     p.x = car.x - Math.cos(car.angle) * 26;
     p.y = car.y - Math.sin(car.angle) * 26;
     state.events.push('exitCar');
+    input.consume('enter');
   }
   // Car-vs-car impacts.
   for (const other of state.cars) {

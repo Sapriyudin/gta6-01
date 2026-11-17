@@ -20,6 +20,7 @@ function fakeInput() {
     mouse: { x: 640, y: 360, down: false, clicked: false },
     is(a) { return held.has(a); },
     wasPressed() { return false; },
+    consume() {},
     endFrame() {},
   };
 }

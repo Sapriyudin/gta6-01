@@ -39,6 +39,9 @@ export function createInput(canvas) {
     mouse,
     is(action) { return down.has(action); },
     wasPressed(action) { return pressed.has(action); },
+    // Consume a one-shot press so a second fixed step in the same frame cannot see it
+    // again (without this, E would enter a car and instantly exit it on a slow frame).
+    consume(action) { pressed.delete(action); },
     // endFrame clears the per-frame key presses, but NOT mouse.clicked: a click is a
     // one-shot event that the world consumes when it fires (clearing it here would drop
     // clicks that land between the world's input check and this call).
